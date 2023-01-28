@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ChaptersList: View {
-    var body: some View {
+    var body: some View{
         NavigationView {
             List(chapters) { chapter in
                 NavigationLink {

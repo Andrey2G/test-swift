@@ -9,12 +9,14 @@ import SwiftUI
 
 struct ChapterRow: View {
     var chapter: ChapterData
+
     var body: some View {
         HStack {
             
             Text(chapter.title)
+                
 
-        }
+        }.background(Color.init(hex:"bad859"))
     }
 }
 
