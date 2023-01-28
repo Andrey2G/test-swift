@@ -8,7 +8,8 @@
 import Foundation
 import SwiftUI
 
-struct ChapterData: Codable {
+struct ChapterData: Codable, Identifiable{
+    var id: Int
     var title: String
     var data: [QuestionAsnwersRow] = Array()
 }

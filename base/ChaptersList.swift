@@ -9,7 +9,15 @@ import SwiftUI
 
 struct ChaptersList: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            List(chapters) { chapter in
+                NavigationLink {
+                    StartTestView(chapter: chapter.title)
+                } label: {
+                    ChapterRow(chapter: chapter)
+                }
+            }
+        }
     }
 }
 

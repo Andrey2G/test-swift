@@ -19,6 +19,7 @@
 		CF95B12D29858D9C00029CB3 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = CF95B12C29858D9C00029CB3 /* data.json */; };
 		CF95B12F29858DE200029CB3 /* ChapterData.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95B12E29858DE200029CB3 /* ChapterData.swift */; };
 		CF95B13129858E2E00029CB3 /* QuestionAnswersRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95B13029858E2E00029CB3 /* QuestionAnswersRow.swift */; };
+		CF95B13329859C7000029CB3 /* ChapterRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95B13229859C7000029CB3 /* ChapterRow.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CF95B12C29858D9C00029CB3 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		CF95B12E29858DE200029CB3 /* ChapterData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterData.swift; sourceTree = "<group>"; };
 		CF95B13029858E2E00029CB3 /* QuestionAnswersRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionAnswersRow.swift; sourceTree = "<group>"; };
+		CF95B13229859C7000029CB3 /* ChapterRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterRow.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +81,7 @@
 				CF95B11F29857CC800029CB3 /* StartView.swift */,
 				CF95B1212985824500029CB3 /* ChaptersList.swift */,
 				CF95B123298582B100029CB3 /* StartTestView.swift */,
+				CF95B13229859C7000029CB3 /* ChapterRow.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 				CF95B12029857CC800029CB3 /* StartView.swift in Sources */,
 				CF95B124298582B100029CB3 /* StartTestView.swift in Sources */,
 				CF79EFA8298530D80099B788 /* ContentView.swift in Sources */,
+				CF95B13329859C7000029CB3 /* ChapterRow.swift in Sources */,
 				CF79EFA6298530D80099B788 /* baseApp.swift in Sources */,
 				CF95B12F29858DE200029CB3 /* ChapterData.swift in Sources */,
 				CF95B1222985824500029CB3 /* ChaptersList.swift in Sources */,

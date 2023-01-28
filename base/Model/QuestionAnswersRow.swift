@@ -9,10 +9,10 @@ import Foundation
 
 struct QuestionAsnwersRow: Codable{
     var q: String
-    var A: String
-    var B: String
-    var C: String
-    var D: String
+    var A: String!
+    var B: String!
+    var C: String!
+    var D: String!
     var k: String
 
 }
