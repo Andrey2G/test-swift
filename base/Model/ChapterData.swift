@@ -11,6 +11,6 @@ import SwiftUI
 struct ChapterData: Codable, Identifiable{
     var id: Int
     var title: String
-    var data: [QuestionAsnwersRow] = Array()
+    var data: [QuestionAsnwersRow]
 }
 

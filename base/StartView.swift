@@ -13,18 +13,19 @@ struct StartView: View {
             Image("Launch")
                 .resizable()
             
-            HStack {
-                Button("START") {
+            NavigationView {
+                HStack {
                     
-                }
-                
-                Spacer()
-                
-                Button("MORE"){
+                    NavigationLink(destination: ChaptersList()) {
+                        Text("START")
+                    }
+                    Spacer()
                     
+                    Button("MORE"){
+                        
+                    }
                 }
             }
-
 
             
         }
