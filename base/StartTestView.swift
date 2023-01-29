@@ -5,6 +5,7 @@
 //  Created by user229277 on 1/28/23.
 //
 
+import GoogleMobileAds
 import SwiftUI
 import WebKit
 

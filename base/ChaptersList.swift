@@ -8,12 +8,21 @@
 import SwiftUI
 
 struct ChaptersList: View {
+    init()
+    {
+        //UINavigationBar.appearance().backgroundColor=UIColor.init(Color.init("bad859"))
+        
+    }
+    @State var showIntersitialAd: Bool = false
     var body: some View{
+        Text("CII R01 Financial Services Regulation and Ethics")
         NavigationView {
             List(chapters) { chapter in
-                NavigationLink {
-                    StartTestView(chapter: chapter.title)
-                } label: {
+                NavigationLink(destination:
+                                StartTestView(chapter: chapter.title)
+                    .presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")
+                )
+                {
                     ChapterRow(chapter: chapter)
                 }
             }

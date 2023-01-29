@@ -16,7 +16,7 @@ struct ChapterRow: View {
             Text(chapter.title)
                 
 
-        }.background(Color.init(hex:"bad859"))
+        }
     }
 }
 

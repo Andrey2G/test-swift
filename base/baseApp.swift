@@ -6,10 +6,19 @@
 //
 
 import SwiftUI
+import AppTrackingTransparency
+import GoogleMobileAds
 
 @main
 struct baseApp: App {
+    init() {
+            ATTrackingManager.requestTrackingAuthorization { status in
+                GADMobileAds.sharedInstance().start(completionHandler: nil)
+                GADMobileAds.sharedInstance().requestConfiguration.testDeviceIdentifiers = [ GADSimulatorID ]
+            }
+        }
     var body: some Scene {
+        
         WindowGroup {
             ContentView()
         }
