@@ -18,6 +18,24 @@ struct StartView: View {
                 .resizable()
             
             VStack {
+                
+                HStack {
+                    Image("Logo")
+                        .resizable()
+                        .scaledToFit()
+                        .padding()
+                        
+                    
+                    Text("CII R04 Pensions & Retirement Planning")
+                        .font(.title)
+                        .frame(maxHeight: .infinity)
+                        
+                        
+                }
+                .frame(height: 120)
+                
+                
+                
                 Spacer()
                 
                 HStack {
