@@ -10,6 +10,7 @@ import StoreKit
 
 struct StartView: View {
     @State var showIntersitialAd: Bool = false
+    @State var showStartView: Bool = false
     var body: some View {
         ZStack
         {
@@ -40,17 +41,22 @@ struct StartView: View {
                 Spacer()
                 
                 HStack {
-                    NavigationLink {
-                        ChaptersList()
-                        
-                    } label: {
+                    
+                    
+
+                    Button(action: {
+                        self.showStartView=true
+                    })
+                    {
                         Text("START")
                             .font(.largeTitle)
                             .foregroundColor(.white)
                             .padding()
                             .background(Rectangle().foregroundColor(.blue))
                             .cornerRadius(10)
-                    }
+                    }.fullScreenCover(isPresented: self.$showStartView, content: {
+                        ChaptersList()
+                    })
                     
                     Spacer()
                     
