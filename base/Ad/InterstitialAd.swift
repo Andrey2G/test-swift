@@ -1,8 +1,8 @@
 //
 //  InterstitialAd.swift
-//  base
+//  SwiftUIMobileAds
 //
-//  Created by user229277 on 1/28/23.
+//  Created by Patrick Haertel on 5/23/21.
 //
 
 import GoogleMobileAds
@@ -15,16 +15,18 @@ class InterstitialAd: NSObject {
     static let shared = InterstitialAd()
     
     func loadAd(withAdUnitId id: String) {
-        let req = GADRequest()
-        GADInterstitialAd.load(withAdUnitID: id, request: req) { interstitialAd, err in
-            if let err = err {
-                print("Failed to load ad with error: \(err)")
+        let request = GADRequest()
+        GADInterstitialAd.load(withAdUnitID:id,
+                               request: request,
+                               completionHandler: { [self] ad, error in
+            if let error = error {
+                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
                 return
             }
-            
-            self.interstitialAd = interstitialAd
-        }
+            interstitialAd = ad
+        })
     }
+    
 }
 
 struct InterstitialAdView: UIViewControllerRepresentable {

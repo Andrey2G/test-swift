@@ -9,12 +9,16 @@ import SwiftUI
 import StoreKit
 
 struct StartView: View {
+    @State var showIntersitialAd: Bool = false
     var body: some View {
-        NavigationView{
-            VStack(alignment: .leading) {
-                Image("Launch")
-                    .resizable()
-                
+        ZStack
+        {
+            Color("BackgroundColor").ignoresSafeArea()
+            Image("Launch")
+                .resizable()
+            
+            VStack {
+                Spacer()
                 
                 HStack {
                     NavigationLink {
@@ -22,11 +26,16 @@ struct StartView: View {
                         
                     } label: {
                         Text("START")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Rectangle().foregroundColor(.blue))
+                            .cornerRadius(10)
                     }
                     
                     Spacer()
                     
-                    Button("MORE") {
+                    Button( action:{
                         // App Store URL.
                         let appStoreLink = "https://itunes.apple.com/us/artist/know-your-subject-limited/id359865591?mt=8"
                         
@@ -39,13 +48,22 @@ struct StartView: View {
                                     print("Launching \(url) was successful")
                                 }})
                         }
+                    })
+                    {
+                        Text("MORE")
+                            .font(.largeTitle)
+                            .foregroundColor(.white)
+                            .padding()
+                            .background(Rectangle().foregroundColor(.blue))
+                            .cornerRadius(10)
                     }
-                    
                 }
+                .padding()
                 
             }
-            .padding()
+            
         }
+        .presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")
     }
 }
 

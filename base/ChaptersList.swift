@@ -15,18 +15,20 @@ struct ChaptersList: View {
     }
     @State var showIntersitialAd: Bool = false
     var body: some View{
-        Text("CII R01 Financial Services Regulation and Ethics")
-        NavigationView {
-            List(chapters) { chapter in
-                NavigationLink(destination:
-                                StartTestView(chapter: chapter.title)
-                    .presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")
-                )
-                {
-                    ChapterRow(chapter: chapter)
+        ZStack{
+            Text("CII R01 Financial Services Regulation and Ethics")
+            NavigationView {
+                List(chapters) { chapter in
+                    NavigationLink(destination:
+                                    StartTestView(chapter: chapter.title)
+                                   
+                    )
+                    {
+                        ChapterRow(chapter: chapter)
+                    }
                 }
             }
-        }
+        }.presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")
     }
 }
 

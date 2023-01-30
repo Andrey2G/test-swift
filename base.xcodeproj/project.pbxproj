@@ -13,6 +13,7 @@
 		CF79EFAA298530DA0099B788 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF79EFA9298530DA0099B788 /* Assets.xcassets */; };
 		CF79EFAD298530DA0099B788 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CF79EFAC298530DA0099B788 /* Preview Assets.xcassets */; };
 		CF79EFB4298531390099B788 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF79EFB3298531390099B788 /* Launch Screen.storyboard */; };
+		CF8CE7FF2986D2E100A0C4C2 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = CF8CE7FE2986D2E100A0C4C2 /* GoogleMobileAds */; };
 		CF95B12029857CC800029CB3 /* StartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95B11F29857CC800029CB3 /* StartView.swift */; };
 		CF95B1222985824500029CB3 /* ChaptersList.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95B1212985824500029CB3 /* ChaptersList.swift */; };
 		CF95B124298582B100029CB3 /* StartTestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF95B123298582B100029CB3 /* StartTestView.swift */; };
@@ -55,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8CE7FF2986D2E100A0C4C2 /* GoogleMobileAds in Frameworks */,
 				1FD5D9F324B8B8EAF101FF88 /* Pods_base.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +165,9 @@
 			dependencies = (
 			);
 			name = base;
+			packageProductDependencies = (
+				CF8CE7FE2986D2E100A0C4C2 /* GoogleMobileAds */,
+			);
 			productName = base;
 			productReference = CF79EFA2298530D80099B788 /* base.app */;
 			productType = "com.apple.product-type.application";
@@ -191,6 +196,9 @@
 				Base,
 			);
 			mainGroup = CF79EF99298530D80099B788;
+			packageReferences = (
+				CF8CE7FD2986D2E100A0C4C2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
 			productRefGroup = CF79EFA3298530D80099B788 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -407,11 +415,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = base/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -439,11 +449,13 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = base/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.education";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -479,6 +491,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CF8CE7FD2986D2E100A0C4C2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CF8CE7FE2986D2E100A0C4C2 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CF8CE7FD2986D2E100A0C4C2 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CF79EF9A298530D80099B788 /* Project object */;
 }
