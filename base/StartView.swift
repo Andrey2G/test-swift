@@ -28,6 +28,7 @@ struct StartView: View {
                     
                     Text("CII R04 Pensions & Retirement Planning")
                         .font(.title)
+                        .foregroundColor(.white)
                         .frame(maxHeight: .infinity)
                         
                         
