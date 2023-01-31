@@ -15,18 +15,16 @@ class InterstitialAd: NSObject {
     static let shared = InterstitialAd()
     
     func loadAd(withAdUnitId id: String) {
-        let request = GADRequest()
-        GADInterstitialAd.load(withAdUnitID:id,
-                               request: request,
-                               completionHandler: { [self] ad, error in
-            if let error = error {
-                print("Failed to load interstitial ad with error: \(error.localizedDescription)")
+        let req = GADRequest()
+        GADInterstitialAd.load(withAdUnitID: id, request: req) { interstitialAd, err in
+            if let err = err {
+                print("Failed to load ad with error: \(err)")
                 return
             }
-            interstitialAd = ad
-        })
+            
+            self.interstitialAd = interstitialAd
+        }
     }
-    
 }
 
 struct InterstitialAdView: UIViewControllerRepresentable {
