@@ -9,8 +9,7 @@ import SwiftUI
 import StoreKit
 
 struct StartView: View {
-    @State var showIntersitialAd: Bool = false
-    @State var showStartView: Bool = false
+    @State var showChaptersListView: Bool = false
     var body: some View {
         ZStack
         {
@@ -42,10 +41,8 @@ struct StartView: View {
                 
                 HStack {
                     
-                    
-
                     Button(action: {
-                        self.showStartView=true
+                        self.showChaptersListView=true
                     })
                     {
                         Text("START")
@@ -54,7 +51,7 @@ struct StartView: View {
                             .padding()
                             .background(Rectangle().foregroundColor(.blue))
                             .cornerRadius(10)
-                    }.fullScreenCover(isPresented: self.$showStartView, content: {
+                    }.fullScreenCover(isPresented: self.$showChaptersListView, content: {
                         ChaptersList()
                     })
                     
@@ -88,7 +85,6 @@ struct StartView: View {
             }
             
         }
-        .presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")
     }
 }
 

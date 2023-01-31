@@ -11,12 +11,15 @@ struct ChapterRow: View {
     var chapter: ChapterData
 
     var body: some View {
-        HStack {
-            
             Text(chapter.title)
+            .font(.title3)
+                .foregroundColor(.black)
+                .padding()
                 
+                //.background(Rectangle().foregroundColor(Color(hex: "bad859")))
+                //.cornerRadius(10)
 
-        }
+              
     }
 }
 
