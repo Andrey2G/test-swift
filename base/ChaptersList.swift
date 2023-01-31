@@ -22,7 +22,7 @@ struct ChaptersList: View {
                 NavigationView {
                     List(chapters) { chapter in
                         ZStack {
-                            Button("") {}
+                            Button("") {self.showIntersitialAd.toggle()}
                             NavigationLink(destination:
                                             StartTestView(chapter: chapter.title)
                                            
@@ -41,9 +41,7 @@ struct ChaptersList: View {
                     //.listRowSeparator(.hidden)
                 }
             }
-            Button("ad"){self.showIntersitialAd.toggle()}
         }
-        
         .presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")
     }
 }
