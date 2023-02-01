@@ -7,7 +7,12 @@
 
 import Foundation
 
-struct QuestionAsnwersRow: Codable{
+enum QuestionType {
+    case MultipleChoice
+    case Boolean
+    case Text
+}
+struct QuestionAsnwersRow:Codable{
     var q: String
     var A: String!
     var B: String!
@@ -15,4 +20,16 @@ struct QuestionAsnwersRow: Codable{
     var D: String!
     var k: String
 
+    func getType() -> QuestionType {
+        switch k
+        {
+        case "A", "B","C","D":
+            return QuestionType.MultipleChoice
+        case "True","False":
+            return QuestionType.Boolean
+        default:
+            return QuestionType.Text
+        }
+        
+    }
 }
