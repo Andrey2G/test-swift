@@ -17,20 +17,12 @@ function hideAddr() {
 function topicMode(tmode) {
     hideAddr();
     if (tmode) {
-        var element = document.getElementById("t-list");
-          element.classList.remove("hidden");
-        var element = document.getElementById("questions");
-          element.classList.add("hidden");
-        //x$('#t-list').removeClass('hidden');
-        //x$('#questions').addClass('hidden');
+        document.getElementById("t-list").classList.remove("hidden");
+        document.getElementById("questions").classList.add("hidden");
     }
     else {
-        var element = document.getElementById("t-list");
-          element.classList.add("hidden");
-        var element = document.getElementById("questions");
-          element.classList.remove("hidden");
-        //x$('#questions').removeClass('hidden');
-        //x$('#t-list').addClass('hidden');
+        document.getElementById("t-list").classList.add("hidden");
+        document.getElementById("questions").classList.remove("hidden");
     }
 }
 
@@ -58,14 +50,12 @@ function formatTime(d) {
 
 function timerTick() {
     document.getElementById("q-time").innerHTML=formatTime(Date.now() - startTime);
-    //x$('#q-time').html(formatTime(Date.now() - startTime));
 }
 
 function startTickTimer()
 {
     startTime = Date.now();
     document.getElementById("q-time").innerHTML='00:00';
-    //x$('#q-time').html('00:00');
     timerId = window.setInterval(timerTick, 1000);
 }
 
@@ -110,74 +100,51 @@ function askQuestion(idx)
 
     if (idx == 0)
     {
-        //x$('#q-back')
-            //.removeClass('q-back')
-            //.addClass('q-menu');
         var element = document.getElementById("q-back");
         element.classList.remove("q-back");
-          element.classList.add("q-menu");
+        element.style.visibility='hidden';
     }
 
     if (idx == 1)
     {
-        //x$('#q-back')
-        //    .removeClass('q-menu')
-        //    .addClass('q-back');
         var element = document.getElementById("q-back");
+        element.style.visibility='visible';
         element.classList.remove("q-menu");
-            element.classList.add("q-back");
+        element.classList.add("q-back");
     }
 
-    //x$('#q-questions').removeClass('hidden');
-    var element = document.getElementById("q-questions"); element.classList.remove("hidden");
-    //x$('#q-skip').css({ visibility: 'visible'});
+    document.getElementById("q-questions").classList.remove("hidden");
     document.getElementById("q-skip").style.visibility="visible";
 
     // set question
-    //x$('#q').removeClass('hidden');
     document.getElementById("q").classList.remove("hidden");
-    //x$('#q').html('inner', '<div>' + q.q + '</div>');
     document.getElementById("q").innerHTML='<div>'+q.q+'</div>';
-    //x$('#q-answers', '#q-details').addClass('hidden');
     document.getElementById("q-answers").classList.add("hidden");
     document.getElementById("q-details").classList.add("hidden");
-    //x$('#q-details').clean();
-    //x$('#q-details').html('inner', '<h3>Wrong answers</h3><div id="q-wa"></div>');
     document.getElementById("q-details").innerHTML='<h3>Wrong answers</h3><div id="q-wa"></div>';
 
     if (boolQuestion(q)) {
-        //x$(['#q-options', '#q-words']).addClass('hidden');
         document.getElementById("q-options").classList.add("hidden");
         document.getElementById("q-words").classList.add("hidden");
-        //x$('#q-yes-no').removeClass('hidden');
         document.getElementById("q-yes-no").classList.remove("hidden");
     }
     else if (answerCount(q) > 0) {
-        //x$(['#q-words', '#q-yes-no']).addClass('hidden');
         document.getElementById("q-words").classList.add("hidden");
         document.getElementById("q-yes-no").classList.add("hidden");
-        //x$('#q-options').removeClass('hidden');
         document.getElementById("q-options").classList.remove("hidden");
 
-        //x$('#q-a').inner(q.A ? q.A : '');
-        //x$('#q-b').inner(q.B ? q.B : '');
-        //x$('#q-c').inner(q.C ? q.C : '');
-        //x$('#q-d').inner(q.D ? q.D : '');
         document.getElementById("q-a").innerHTML=q.A ? q.A : '';
         document.getElementById("q-b").innerHTML=q.A ? q.B : '';
         document.getElementById("q-c").innerHTML=q.A ? q.C : '';
         document.getElementById("q-d").innerHTML=q.A ? q.D : '';
     }
     else {
-        //x$(['#q-options', '#q-yes-no']).addClass('hidden');
         document.getElementById("q-options").classList.add("hidden");
         document.getElementById("q-yes-no").classList.add("hidden");
-        //x$('#q-words').removeClass('hidden');
         document.getElementById("q-words").classList.remove("hidden");
         document.getElementById('q-input').value = '';
     }
 
-    //x$('#q-num').html('' + (idx+1));
     document.getElementById("q-num").innerHTML='' + (idx+1);
 
     hideAddr();
@@ -221,24 +188,17 @@ function showAnswers()
 
     stopTickTimer();
 
-    //x$('#q-back')
-    //    .removeClass('q-back')
-    //    .addClass('q-menu');
     document.getElementById("q-back").classList.remove("q-back");
-    document.getElementById("q-back").classList.add("q-menu");
+    //document.getElementById("q-back").classList.add("q-menu");
+    document.getElementById("q-back").style.visibility='hidden';
 
-    //x$('#q-questions', '#q-details').addClass('hidden');
     document.getElementById("q-questions").classList.add("hidden");
     document.getElementById("q-details").classList.add("hidden");
-    //x$('#q-answers').removeClass('hidden');
     document.getElementById("q-answers").classList.remove("hidden");
 
-    //x$('#q-skip').css({ visibility: 'hidden'});
     document.getElementById("q-skip").style.visibility='hidden';
 
-    //x$('#q-stime').html(x$('#q-time').html());
     document.getElementById("q-stime").innerHTML=document.getElementById("q-time").innerHTML;
-    //x$('#q-total').html('' + qc);
     document.getElementById("q-total").innerHTML='' + qc;
 
     for (i = 0; i < qc; i++) {
@@ -250,34 +210,21 @@ function showAnswers()
             wrongAnswers.push(i);
     }
 
-    //x$('#q-rimg')
-    //    .removeClass('s')
-    //    .removeClass('u')
-    //    .addClass(ra < qc/2 ? 'u' : 's');
     document.getElementById("q-rimg").classList.remove('s');
     document.getElementById("q-rimg").classList.remove('u');
     document.getElementById("q-rimg").classList.add(ra < qc/2 ? 'u' : 's');
 
-    //x$('#q-msg')
-    //    .removeClass('s')
-    //    .removeClass('u')
-    //    .addClass(ra < qc/2 ? 'u' : 's');
     document.getElementById("q-msg").classList.remove('s');
     document.getElementById("q-msg").classList.remove('u');
     document.getElementById("q-msg").classList.add(ra < qc/2 ? 'u' : 's');
 
-    //x$('#q-ok').html('' + ra);
     document.getElementById("q-ok").innerHTML='' + ra;
-    //x$('#q-wrong').html('' + (qc - ra - sc));
     document.getElementById("q-wrong").innerHTML='' + (qc - ra - sc);
-    //x$('#q-skipped').html('' + sc);
     document.getElementById("q-skipped").innerHTML='' + sc;
 
     if (qc == ra)
-        //x$('#q-show-details').addClass('hidden');
         document.getElementById("q-show-details").classList.add('hidden');
     else
-        //x$('#q-show-details').removeClass('hidden');
         document.getElementById("q-show-details").classList.remove('hidden');
 }
 
@@ -316,14 +263,12 @@ function showTopic(tidx) {
 
 
 
-    //x$('#q-topic').html(questionData[tidx].title);
     document.getElementById("q-topic").innerHTML=questionData[tidx].title;
     buildRandomQ();
     askQuestion(currentQ);
     startTickTimer();
 }
 
-//x$('.q-opt').on('click', function(e) {
 document.getElementById("q-a").addEventListener("click",function(e) {
     recordAnswer("A");
     nextQuestion();
@@ -341,48 +286,39 @@ document.getElementById("q-d").addEventListener("click",function(e) {
     nextQuestion();
 })
 
-//x$('#q-yes').on('click', function () {
 document.getElementById("q-yes").addEventListener("click",function(e) {
     recordAnswer('True');
     nextQuestion();
 });
 
-//x$('#q-no').on('click', function () {
 document.getElementById("q-no").addEventListener("click",function(e) {
     recordAnswer('False');
     nextQuestion();
 });
 
-//x$('#q-words-ok').on('click', function () {
 document.getElementById("q-words-ok").addEventListener("click",function(e) {
     var a = document.getElementById('q-input').value;
     recordAnswer(a);
     nextQuestion();
 })
 
-//x$('#q-skip').on('click', function () {
 document.getElementById("q-skip").addEventListener("click",function(e) {
     skipped[currentQ] = true;
     nextQuestion();
 });
 
-//x$('#q-back').on('click', function() {
 document.getElementById("q-back").addEventListener("click",function(e) {
-    //if (x$('#q-back').hasClass('q-back'))
     if (document.getElementById("q-back").classList.contains('q-back'))
         prevQuestion();
     else
         topicList();
 });
 
-//x$('#q-show-details').on('click', function () {
 document.getElementById("q-show-details").addEventListener("click",function(e) {
     var i, q, s = [];
 
-    //x$(['#q-questions', '#q-answers']).addClass('hidden');
     document.getElementById("q-questions").classList.add('hidden');
     document.getElementById("q-answers").classList.add('hidden');
-    //x$('#q-details').removeClass('hidden');
     document.getElementById("q-details").classList.remove('hidden');
 
     for (i = 0; i < wrongAnswers.length; i++) {
@@ -401,7 +337,6 @@ document.getElementById("q-show-details").addEventListener("click",function(e) {
         s.push('</div>');
     }
 
-    //x$('#q-wa').html(s.join('\n'));
     document.getElementById("q-wa").innerHTML=s.join('\n');
 });
 
@@ -414,15 +349,8 @@ function initTopicList() {
         s.push('</div>');
     }
 
-    //x$('#t-list').html(s.join(''));
     document.getElementById("t-list").innerHTML=s.join('');
 
-    //x$('#t-list .topic').on('click', function (e) {
-    //    var tid = e.target.id.substr(1);
-    //    showTopic(parseInt(tid));
-    //});
-
-    //x$('#q-module').html(moduleName);
     document.getElementById("q-module").innerHTML=moduleName;
     topicMode(true);
 }
