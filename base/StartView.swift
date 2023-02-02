@@ -46,10 +46,10 @@ struct StartView: View {
                     })
                     {
                         Text("START")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
+                            .font(.title2)
+                            .foregroundColor(.blue)
                             .padding()
-                            .background(Rectangle().foregroundColor(.blue))
+                            .background(Rectangle().foregroundColor(.white))
                             .cornerRadius(10)
                     }.fullScreenCover(isPresented: self.$showChaptersListView, content: {
                         ChaptersList()
@@ -73,10 +73,10 @@ struct StartView: View {
                     })
                     {
                         Text("MORE")
-                            .font(.largeTitle)
-                            .foregroundColor(.white)
+                            .font(.title2)
+                            .foregroundColor(.blue)
                             .padding()
-                            .background(Rectangle().foregroundColor(.blue))
+                            .background(Rectangle().foregroundColor(.white))
                             .cornerRadius(10)
                     }
                 }

@@ -14,7 +14,7 @@ struct ChapterRow: View {
             Text(chapter.title)
             .font(.title3)
                 .foregroundColor(.black)
-                .padding()
+                .padding(4)
                 
                 //.background(Rectangle().foregroundColor(Color(hex: "bad859")))
                 //.cornerRadius(10)
