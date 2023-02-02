@@ -4,14 +4,14 @@
 	<link rel="stylesheet" type="text/css" href="main.css" media="screen" />
 	<link rel="apple-touch-icon" href="57.png" />
 	<meta name="viewport" content="width=device-width,user-scalable=no" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
 	<meta name="apple-touch-fullscreen" content="YES" />
 </head>
 <body>
     <div> </br></div>
 	<div id="q-module" class="hidden"></div>
 	<div id="t-list"></div>
-	<div id="questions" class="hidden">
+    <div id="questions" class="hidden">
 		<div id="q-hdr">
 			<div id="q-topic">topic</div>
 			<div id="q-hdr-b">
@@ -36,8 +36,8 @@
 						<button id="q-no">False</button>
 					</div>
 				</div>
-				<div id="q-words" class="hidden">
-					<input type="text" id="q-input"><button id="q-words-ok">OK</button>
+				<div id="q-words" class="hidden" contenteditable='true' >
+					<input type="text" id="q-input" autocorrect="off" autocapitalize="off" autofocus='true'><button id="q-words-ok">OK</button>
 				</div>
 				<div id="q-nlabel">Question <span id="q-num"></span> of 10</div>
 			</div>

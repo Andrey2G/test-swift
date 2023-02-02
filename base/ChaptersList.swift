@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ChaptersList: View {
     @State var showIntersitialAd: Bool = false
+   
     init() {
         //UITableView.appearance().separatorStyle = .none
         //UITableViewCell.appearance().backgroundColor = .green
@@ -32,7 +33,7 @@ struct ChaptersList: View {
                             Button("") {self.showIntersitialAd.toggle()}
                             
                             NavigationLink(destination:
-                                            StartTestView(chapter: chapter.title)
+                                            StartTestView(chapter: chapter.title, parent: self)
                                            
                             )
                             {

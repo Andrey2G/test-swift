@@ -102,7 +102,7 @@ function askQuestion(idx)
     {
         var element = document.getElementById("q-back");
         element.classList.remove("q-back");
-        element.style.visibility='hidden';
+        element.classList.add("q-menu");
     }
 
     if (idx == 1)
@@ -142,6 +142,7 @@ function askQuestion(idx)
         document.getElementById("q-options").classList.add("hidden");
         document.getElementById("q-yes-no").classList.add("hidden");
         document.getElementById("q-words").classList.remove("hidden");
+        document.getElementById("q-input").focus();
         document.getElementById('q-input').value = '';
     }
 
@@ -189,8 +190,8 @@ function showAnswers()
     stopTickTimer();
 
     document.getElementById("q-back").classList.remove("q-back");
-    //document.getElementById("q-back").classList.add("q-menu");
-    document.getElementById("q-back").style.visibility='hidden';
+    document.getElementById("q-back").classList.add("q-menu");
+    //document.getElementById("q-back").style.visibility='hidden';
 
     document.getElementById("q-questions").classList.add("hidden");
     document.getElementById("q-details").classList.add("hidden");
@@ -311,7 +312,8 @@ document.getElementById("q-back").addEventListener("click",function(e) {
     if (document.getElementById("q-back").classList.contains('q-back'))
         prevQuestion();
     else
-        topicList();
+        //topicList();
+        window.webkit.messageHandlers.goBack.postMessage('')
 });
 
 document.getElementById("q-show-details").addEventListener("click",function(e) {
