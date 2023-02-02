@@ -38,6 +38,7 @@
 		CFDF7B3229895570008305EA /* QuestionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF7B3129895570008305EA /* QuestionView.swift */; };
 		CFDF7B342989628F008305EA /* AnswersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF7B332989628F008305EA /* AnswersView.swift */; };
 		CFDF7B3629896D86008305EA /* ChapterTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFDF7B3529896D86008305EA /* ChapterTest.swift */; };
+		CFE7F5DB298B9EDD00668FD1 /* HideNavigtionBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFE7F5DA298B9EDD00668FD1 /* HideNavigtionBarItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,6 +76,7 @@
 		CFDF7B3129895570008305EA /* QuestionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionView.swift; sourceTree = "<group>"; };
 		CFDF7B332989628F008305EA /* AnswersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersView.swift; sourceTree = "<group>"; };
 		CFDF7B3529896D86008305EA /* ChapterTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChapterTest.swift; sourceTree = "<group>"; };
+		CFE7F5DA298B9EDD00668FD1 /* HideNavigtionBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideNavigtionBarItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +147,7 @@
 				CF95B1362985DBA100029CB3 /* InterstitialAd.swift */,
 				CF95B1382985DD8100029CB3 /* FullScreenModifier.swift */,
 				CF1243F4298B32FC00277526 /* ListViewSeparatorModifier.swift */,
+				CFE7F5DA298B9EDD00668FD1 /* HideNavigtionBarItem.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				CFDF7B3629896D86008305EA /* ChapterTest.swift in Sources */,
 				CF95B13129858E2E00029CB3 /* QuestionAnswersRow.swift in Sources */,
 				CF95B12729858AD600029CB3 /* ModelData.swift in Sources */,
+				CFE7F5DB298B9EDD00668FD1 /* HideNavigtionBarItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
