@@ -49,35 +49,42 @@ struct ChaptersList: View {
                                 
                             }.background(Color(hex: "bad859"))
                                 .cornerRadius(10)
+                                .navigationBarHidden(true)
                         }
                         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .leading)
-                                .listRowInsets(EdgeInsets())
-                                .background(Color(UIColor.systemBackground))
+                        .listRowInsets(EdgeInsets())
+                        .background(Color(UIColor.systemBackground))
                         
                     }.padding(5)
                     
+                    
                     Spacer()
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .navigationBarTitle("Menu", displayMode: .inline)
-                .navigationBarHidden(true)
-                .navigationBarBackButtonHidden(true)
+                
+                //.navigationBarHidden(true)
+                //.navigationBarTitleDisplayMode(.inline)
+                .navigationBarTitle("Back to Chapters", displayMode: .inline)
+                .hiddenNavigationBarStyle()
+                //.navigationBarHidden(true)
+                //.navigationBarBackButtonHidden(true)
                 .listStyle(PlainListStyle())
                 //.listStyle(SidebarListStyle())
                 //.navigationBarHidden(false)
                 //.navigationBarBackButtonHidden(true)
-                //.hiddenNavigationBarStyle()
+                .hiddenNavigationBarStyle()
                 //.padding()
                 //.background(Color.green)
                 //remove the default Navigation Bar space:
                 //.hiddenNavigationBarStyle()
                 
-            }
+            }//navigationview
+            //.navigationBarHidden(true)
+            //.hiddenNavigationBarStyle()
             .presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")
             
-        }
-    }
-}
+        }//vstack
+    }//body
+}//class
 /*
 struct ChaptersList: View {
     @State var showIntersitialAd: Bool = false
