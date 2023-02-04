@@ -9,8 +9,9 @@ import Foundation
 import SwiftUI
 
 struct ChapterData: Codable, Identifiable{
-    var id: String = UUID().uuidString
+    var id: Int
     var title: String
+    
     var data: [QuestionAsnwersRow]
     
     enum CodingKeys: String, CodingKey {
@@ -19,7 +20,7 @@ struct ChapterData: Codable, Identifiable{
         }
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(String.self, forKey: .id) ?? UUID().uuidString
+        id = try values.decodeIfPresent(Int.self, forKey: .id) ?? 0
         title = try values.decodeIfPresent(String.self, forKey: .title) ?? UUID().uuidString
         data = try values.decodeIfPresent([QuestionAsnwersRow].self, forKey: .data)!
     }

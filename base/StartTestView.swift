@@ -12,7 +12,7 @@ import WebKit
 struct StartTestView:UIViewRepresentable
 {
     
-    var chapter: String
+    var chapter: ChapterData
     var parent: ChaptersList
     
     @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
@@ -59,14 +59,14 @@ struct StartTestView:UIViewRepresentable
         }
         
         func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-            let scriptSource = "showTopic(3)"
+            let scriptSource = "showTopic(\(self.parent.chapter.id))"
             
             webView.evaluateJavaScript(scriptSource, completionHandler: { (object, error) in
                 if let error = error {
-                    print("Error calling javascript:showTopic(3)")
+                    print("Error calling javascript:showTopic(\(self.parent.chapter.id))")
                     print(error.localizedDescription)
                 } else {
-                    print("Called javascript:showTopic()")
+                    print("Called javascript:showTopic(\(self.parent.chapter.id))")
                 }
             })
         }
@@ -77,6 +77,6 @@ struct StartTestView:UIViewRepresentable
 
 struct StartTestView_Previews: PreviewProvider {
     static var previews: some View {
-        StartTestView(chapter: "", parent: ChaptersList())
+        StartTestView(chapter: chapters[0], parent: ChaptersList())
     }
 }

@@ -33,7 +33,7 @@ struct ChaptersList: View {
                             Button("") {self.showIntersitialAd.toggle()}
                             
                             NavigationLink(destination:
-                                            StartTestView(chapter: chapter.title, parent: self)
+                                            StartTestView(chapter: chapter, parent: self)
                                            
                             )
                             {
