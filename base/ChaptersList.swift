@@ -78,6 +78,7 @@ struct ChaptersList: View {
                 //.hiddenNavigationBarStyle()
                 
             }//navigationview
+            .navigationViewStyle(StackNavigationViewStyle())
             //.navigationBarHidden(true)
             //.hiddenNavigationBarStyle()
             .presentInterstitialAd(isPresented: $showIntersitialAd,  adUnitId: "ca-app-pub-3940256099942544/4411468910")

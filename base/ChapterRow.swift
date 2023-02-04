@@ -12,7 +12,7 @@ struct ChapterRow: View {
 
     var body: some View {
             Text(chapter.title)
-            .font(.title3)
+            .font(.largeTitle)
                 .foregroundColor(.black)
                 .padding(4)
                 

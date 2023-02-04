@@ -20,22 +20,25 @@ struct StartView: View {
             
             VStack {
                 
-                HStack {
-                    Image("Logo")
-                        .resizable()
-                        .scaledToFit()
-                        .padding()
-                        
-                    
-                    Text("CII R04 Pensions & Retirement Planning")
-                        .font(.title)
-                        .foregroundColor(.white)
-                        .frame(maxHeight: .infinity)
+                VStack{
+                    Spacer()
+                    HStack {
+                        Image("Logo")
+                            .resizable()
+                            .scaledToFit()
+                            .padding()
                         
                         
-                }
-                .frame(height: 120)
-                
+                        Text("CII R04 Pensions & Retirement Planning")
+                            .font(.title)
+                            .foregroundColor(.white)
+                            .frame(maxHeight: .infinity)
+                        
+                        
+                    }
+                    .frame(height: 128)
+                    Spacer()
+                }.frame(height: 170)
                 
                 
                 Spacer()
@@ -82,6 +85,7 @@ struct StartView: View {
                     }
                 }
                 .padding()
+                //Spacer()
                 
             }
             
